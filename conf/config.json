@@ -1,7 +1,7 @@
 {
   "paramDefaults": {
-    "minDeposit": 10000000000000000000,
-    "pMinDeposit": 100000000000000000000,
+    "minDeposit": 1000,
+    "pMinDeposit": 10000,
     "applyStageLength": 600,
     "pApplyStageLength": 1200,
     "commitStageLength": 600,
@@ -15,22 +15,22 @@
     "exitTimeDelay": 600,
     "exitPeriodLen": 600
 	},
-  "name": "The TestChain Registry",
+  "name": "Fake News Registry",
   "token": {
-    "supply": "1000000000000000000000000000",
-    "name": "TestCoin",
+    "supply": "100000000000",
+    "name": "FakeNews Coin",
     "decimals": "18",
-    "symbol": "TEST",
+    "symbol": "FKN",
     "tokenHolders": [
-      "0xd09cc3bc67e4294c4a446d8e4a2934a921410ed7",
-      "0x8FEa967fF3E8B14498BC17D8d43E8cdd614613c7",
-      "0x874Fec5f1D5045B85f46fBD2Be6264867c3D7cE5",
-      "0xf978cC95Eba88cC8869e580d282620e3b4382016",
-      "0x4fB9dEA18CDf6f737afDfc3f680Fb5500F8F893A",
-      "0xf17f52151EbEF6C7334FAD080c5704D77216b732",
-      "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef",
-      "0x821aEa9a577a9b44299B9c15c88cf3087F3b5544",
-      "0x627306090abaB3A6e1400e9345bC60c78a8BEf57"
+      "0x8A73c4b425f4b2E1BF50B89aAd57916e0fBA6c2c",
+      "0x5dBbe2c5c69637ad39e4bc1059732Fc5972c71E5",
+      "0x09584181C0b46CFe5F41390642Ab231980609299",
+      "0x36e43dbD6A68AB3edE704DB5Ad711FD5D51ca325",
+      "0x2140d1a728E5450C9194f93A7619E5A47ce6850c",
+      "0x2D1d9011dC9607715b0F30bdd1176Cb90aA22D2a",
+      "0x3ecF801bE6De8eFB9C7d0212ca15B35671AD8AA4",
+      "0x23a3919949C8CbBC19Af6d0dB83d1b8BD76193c9",
+      "0x94F9a7318C9B07417a0BBe030046ceEaa3396243"
     ]
   }
 }
