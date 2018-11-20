@@ -17,20 +17,13 @@
 	},
   "name": "Fake News Registry",
   "token": {
-    "supply": "100000000000",
-    "name": "FakeNews Coin",
-    "decimals": "18",
-    "symbol": "FKN",
+    "supply": "1000",
+    "name": "Truth Coin",
+    "decimals": "0",
+    "symbol": "TRU",
     "tokenHolders": [
-      "0x8A73c4b425f4b2E1BF50B89aAd57916e0fBA6c2c",
-      "0x5dBbe2c5c69637ad39e4bc1059732Fc5972c71E5",
-      "0x09584181C0b46CFe5F41390642Ab231980609299",
-      "0x36e43dbD6A68AB3edE704DB5Ad711FD5D51ca325",
-      "0x2140d1a728E5450C9194f93A7619E5A47ce6850c",
-      "0x2D1d9011dC9607715b0F30bdd1176Cb90aA22D2a",
-      "0x3ecF801bE6De8eFB9C7d0212ca15B35671AD8AA4",
-      "0x23a3919949C8CbBC19Af6d0dB83d1b8BD76193c9",
-      "0x94F9a7318C9B07417a0BBe030046ceEaa3396243"
+      "0xd0d327e7B60C7B86021d7Bd29f6DCd99CbCf53d1",
+      "0xB16a0f62f98BaECfbB8D817B6fe0d8b5536490E7"
     ]
   }
 }

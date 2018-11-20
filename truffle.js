@@ -1,7 +1,7 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const fs = require('fs');
 
-let mnemonic = 'warm correct sick equal wreck auction critic floor absurd dumb velvet total';
+let mnemonic = 'know find fiction duty chalk spend until old similar wave garment urban';
 
 if (fs.existsSync('secrets.json')) {
   const secrets = JSON.parse(fs.readFileSync('secrets.json', 'utf8'));
