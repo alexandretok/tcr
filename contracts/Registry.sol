@@ -28,12 +28,13 @@ contract Registry {
     using SafeMath for uint;
 
     struct Listing {
+        string data;
         uint applicationExpiry; // Expiration date of apply stage
         bool whitelisted;       // Indicates registry status
         address owner;          // Owner of Listing
         uint unstakedDeposit;   // Number of tokens in the listing not locked in a challenge
         uint challengeID;       // Corresponds to a PollID in PLCRVoting
-	uint exitTime;		// Time the listing may leave the registry
+	    uint exitTime;		    // Time the listing may leave the registry
         uint exitTimeExpiry;    // Expiration date of exit period
     }
 
@@ -51,6 +52,7 @@ contract Registry {
 
     // Maps listingHashes to associated listingHash data
     mapping(bytes32 => Listing) public listings;
+    bytes32[] public listingsHashes;
 
     // Global Variables
     EIP20Interface public token;
@@ -73,6 +75,10 @@ contract Registry {
         name = _name;
     }
 
+    function getListingsHashes() public view returns (bytes32[]) {
+        return listingsHashes;
+    }
+
     // --------------------
     // PUBLISHER INTERFACE:
     // --------------------
@@ -90,8 +96,10 @@ contract Registry {
         require(_amount >= parameterizer.get("minDeposit"));
 
         // Sets owner
+        listingsHashes.push(_listingHash);
         Listing storage listing = listings[_listingHash];
         listing.owner = msg.sender;
+        listing.data = _data;
 
         // Sets apply stage end time
         listing.applicationExpiry = block.timestamp.add(parameterizer.get("applyStageLen"));
@@ -141,7 +149,7 @@ contract Registry {
     @dev		Initialize an exit timer for a listing to leave the whitelist
     @param _listingHash	A listing hash msg.sender is the owner of
     */
-    function initExit(bytes32 _listingHash) external {	
+    function initExit(bytes32 _listingHash) external {
         Listing storage listing = listings[_listingHash];
 
         require(msg.sender == listing.owner);
@@ -174,7 +182,7 @@ contract Registry {
 
         // Make sure the exit was initialized
         require(listing.exitTime > 0);
-        // Time to exit has to be after exit delay but before the exitPeriodLen is over 
+        // Time to exit has to be after exit delay but before the exitPeriodLen is over
 	require(listing.exitTime < now && now < listing.exitTimeExpiry);
 
         resetListing(_listingHash);
@@ -483,7 +491,7 @@ contract Registry {
         address owner = listing.owner;
         uint unstakedDeposit = listing.unstakedDeposit;
         delete listings[_listingHash];
-        
+
         // Transfers any remaining balance back to the owner
         if (unstakedDeposit > 0){
             require(token.transfer(owner, unstakedDeposit));
