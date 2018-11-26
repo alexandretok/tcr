@@ -2,11 +2,11 @@
   "paramDefaults": {
     "minDeposit": 100,
     "pMinDeposit": 10000,
-    "applyStageLength": 60,
+    "applyStageLength": 300,
     "pApplyStageLength": 1200,
-    "commitStageLength": 60,
+    "commitStageLength": 300,
     "pCommitStageLength": 1200,
-    "revealStageLength": 60,
+    "revealStageLength": 300,
     "pRevealStageLength": 1200,
     "dispensationPct": 50,
     "pDispensationPct": 50,
@@ -15,7 +15,7 @@
     "exitTimeDelay": 60,
     "exitPeriodLen": 60
 	},
-  "name": "Fake News Registry",
+  "name": "Registro de Notícias Falsas",
   "token": {
     "supply": "1000000",
     "name": "Truth Coin",

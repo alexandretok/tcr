@@ -49,3 +49,4 @@ module.exports = {
   },
 };
 
+// truffle migrate --network ganache --reset && npm run deploy-proxies:ganache
