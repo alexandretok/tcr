@@ -75,8 +75,14 @@ contract Registry {
         name = _name;
     }
 
-    function getListingsHashes() public view returns (bytes32[]) {
-        return listingsHashes;
+    function isDataWhitelisted(string _data) view public returns (bool whitelisted) {
+        bytes32 _dataHash = keccak256(_data);
+        for(uint256 i = 0; i < listingsHashes.length; i++) {
+            if(keccak256(listings[listingsHashes[i]].data) == _dataHash)
+                return listings[listingsHashes[i]].whitelisted;
+        }
+
+        return false;
     }
 
     // --------------------
